@@ -1,120 +1,58 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Myth vs Fact - IntimaCare</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<section style="padding:40px 20px;">
+  <h2>Have a Private Concern?</h2>
+  <button onclick="openForm()" style="
+    padding:12px 25px;
+    background:#bb86fc;
+    border:none;
+    border-radius:25px;
+    font-weight:bold;
+    cursor:pointer;">
+    Ask Anonymously (18+)
+  </button>
+</section>
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #0f0f14;
-  color: white;
-}
+<!-- Popup Modal -->
+<div id="formPopup" style="
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+">
 
-header {
-  text-align: center;
-  padding: 30px;
-  background: linear-gradient(135deg, #1e1e2f, #2b1e3f);
-}
+  <div style="
+    background:#1e1e2f;
+    padding:20px;
+    width:90%;
+    max-width:600px;
+    border-radius:10px;
+    position:relative;
+  ">
 
-h1 {
-  color: #bb86fc;
-}
+    <span onclick="closeForm()" style="
+      position:absolute;
+      top:10px;
+      right:15px;
+      cursor:pointer;
+      font-size:20px;">✖</span>
 
-.container {
-  padding: 20px;
-}
+    <!-- PASTE YOUR IFRAME BELOW -->
+    
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe5KP0bW1cVcKDsMKNoEB7mANYOijc8ODqnTN4cgUFOkTsEgw/viewform?embedded=true" width="640" height="1007" frameborder="0" marginheight="0" marginwidth="0">लोड हो रहा है…</iframe>
 
-.question {
-  background-color: #1f1f2e;
-  padding: 15px;
-  margin: 10px 0;
-  cursor: pointer;
-  border-radius: 8px;
-  font-weight: bold;
-}
-
-.answer {
-  display: none;
-  padding: 15px;
-  background-color: #2a2a3d;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #1a1a22;
-  font-size: 14px;
-  opacity: 0.7;
-}
-</style>
+  </div>
+</div>
 
 <script>
-function toggleAnswer(id) {
-  var x = document.getElementById(id);
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
+function openForm() {
+  document.getElementById("formPopup").style.display = "flex";
+}
+
+function closeForm() {
+  document.getElementById("formPopup").style.display = "none";
 }
 </script>
-
-</head>
-
-<body>
-
-<header>
-  <h1>Myth vs Fact</h1>
-</header>
-
-<div class="container">
-
-<div class="question" onclick="toggleAnswer('a1')">
-Myth: Masturbation causes weakness
-</div>
-<div id="a1" class="answer">
-Fact: It is a normal biological activity and does not cause physical weakness.
-</div>
-
-<div class="question" onclick="toggleAnswer('a2')">
-Myth: Nightfall is harmful
-</div>
-<div id="a2" class="answer">
-Fact: Nocturnal emissions are natural and not dangerous.
-</div>
-
-<div class="question" onclick="toggleAnswer('a3')">
-Myth: Condom gives 100% protection
-</div>
-<div id="a3" class="answer">
-Fact: Condoms greatly reduce risk but are not 100% effective.
-</div>
-
-<div class="question" onclick="toggleAnswer('a4')">
-Myth: Porn improves real performance
-</div>
-<div id="a4" class="answer">
-Fact: Porn often creates unrealistic expectations and performance anxiety.
-</div>
-
-</div>
-<section style="padding:40px 20px;">
-  <h2>Ask Your Question (Anonymous – 18+ Only)</h2>
-  <p>Please do not share your name or personal identity details.</p>
-
-  <!-- Google Form Embed Below -->
-
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe5KP0bW1cVcKDsMKNoEB7mANYOijc8ODqnTN4cgUFOkTsEgw/viewform?embedded=true" width="640" height="1007" frameborder="0" marginheight="0" marginwidth="0">लोड हो रहा है…</iframe>
-
-</section>
-<footer>
-© 2026 IntimaCare | Educational Use Only
-</footer>
-
-</body>
-</html>
