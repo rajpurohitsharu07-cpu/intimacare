@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Myth vs Fact - IntimaCare</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0f0f14;
+  color: white;
+}
+
+header {
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(135deg, #1e1e2f, #2b1e3f);
+}
+
+h1 {
+  color: #bb86fc;
+}
+
+.container {
+  padding: 20px;
+}
+
+.question {
+  background-color: #1f1f2e;
+  padding: 15px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.answer {
+  display: none;
+  padding: 15px;
+  background-color: #2a2a3d;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1a1a22;
+  font-size: 14px;
+  opacity: 0.7;
+}
+</style>
+
+<script>
+function toggleAnswer(id) {
+  var x = document.getElementById(id);
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+  <h1>Myth vs Fact</h1>
+</header>
+
+<div class="container">
+
+<div class="question" onclick="toggleAnswer('a1')">
+Myth: Masturbation causes weakness
+</div>
+<div id="a1" class="answer">
+Fact: It is a normal biological activity and does not cause physical weakness.
+</div>
+
+<div class="question" onclick="toggleAnswer('a2')">
+Myth: Nightfall is harmful
+</div>
+<div id="a2" class="answer">
+Fact: Nocturnal emissions are natural and not dangerous.
+</div>
+
+<div class="question" onclick="toggleAnswer('a3')">
+Myth: Condom gives 100% protection
+</div>
+<div id="a3" class="answer">
+Fact: Condoms greatly reduce risk but are not 100% effective.
+</div>
+
+<div class="question" onclick="toggleAnswer('a4')">
+Myth: Porn improves real performance
+</div>
+<div id="a4" class="answer">
+Fact: Porn often creates unrealistic expectations and performance anxiety.
+</div>
+
+</div>
+
+<footer>
+© 2026 IntimaCare | Educational Use Only
+</footer>
+
+</body>
+</html>
