@@ -1,105 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IntimaCare</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #1c1c1c;
-            color: #e0d9f0;
-        }
-        a {
-            color: #b48df7;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        header {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 1rem 2rem;
-            background-color: #111;
-        }
-        nav a {
-            margin-left: 2rem;
-            font-weight: bold;
-        }
-        .hero {
-            text-align: center;
-            padding: 4rem 1rem;
-        }
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #b48df7;
-        }
-        .hero p {
-            max-width: 600px;
-            margin: auto;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-        .cta {
-            margin-top: 2rem;
-            padding: 0.8rem 2rem;
-            background-color: #b48df7;
-            color: #111;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        .cta:hover {
-            background-color: #9a6de0;
-        }
-        .container {
-            max-width: 900px;
-            margin: 3rem auto;
-            padding: 0 1rem;
-        }
-        .container h3 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background-color: #111;
-            margin-top: 3rem;
-            font-size: 0.9rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IntimaCare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Roboto', sans-serif; margin:0; padding:0; background:#f7f7f7; color:#333; }
+    header { padding:20px; text-align:center; background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+    header h1 { margin:0; font-size:28px; color:#2a7f78; }
+    .hero { padding:40px 20px; text-align:center; background:#eaf3f2;}
+    .hero h2 { font-size:32px; margin-bottom:15px; color:#2a7f78;}
+    .hero p { font-size:18px; margin-bottom:25px; max-width:700px; margin-left:auto; margin-right:auto;}
+    .hero button { background:#2a7f78; color:#fff; padding:12px 25px; border:none; border-radius:5px; font-size:16px; cursor:pointer; margin:5px;}
+    .features, .learn-topics, .myths { max-width:900px; margin:40px auto; padding:0 20px; }
+    .feature-box, .topic-box, .myth-box { background:#fff; border-radius:8px; padding:20px; margin:15px 0; box-shadow:0 2px 5px rgba(0,0,0,0.05);}
+    .feature-box h3, .topic-box h3, .myth-box h3 { margin-top:0; color:#2a7f78;}
+    footer { text-align:center; padding:20px; background:#fff; color:#777; font-size:14px;}
+    a.button-link { text-decoration:none; color:#fff; }
+  </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <nav>
-            <a href="anatomy.html">Bodies & Anatomy</a>
-            <a href="myth.html">Myth vs Fact</a>
-            <a href="selftest.html">Self Assessment</a>
-        </nav>
-    </header>
+<header>
+  <h1>IntimaCare</h1>
+</header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h2>Heart Never Stops!</h2>
-        <p>Providing reality-based sexual health guidance and counseling. Understand your body, myths, and personalized insights.</p>
-        <button class="cta" onclick="location.href='selftest.html'">Start Self Assessment</button>
-    </section>
+<section class="hero">
+  <h2>Scientific sexual health education for adults</h2>
+  <p>IntimaCare provides scientific sexual health education for adults (18+), busts common myths, and offers confidential, educational guidance based on medical knowledge.</p>
+  <button onclick="location.href='topics.html'">Start Learning</button>
+  <button onclick="location.href='topics.html'">Explore Topics</button>
+  <p><a href="ask.html">Ask an anonymous question</a></p>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>Contact: <a href="mailto:rajpurohitsharu07@gmail.com">rajpurohitsharu07@gmail.com</a></p>
-        <p>© 2026 IntimaCare | Educational Use Only</p>
-    </footer>
+<section class="features">
+  <div class="feature-box">
+    <h3>Clear, confidential sexual health education</h3>
+    <p>We provide evidence-based content designed to help you understand and navigate sexual health with confidence.</p>
+  </div>
+  <div class="feature-box">
+    <h3>Evidence-based lessons</h3>
+    <p>Learn from content grounded in medical knowledge and current research.</p>
+  </div>
+  <div class="feature-box">
+    <h3>Myth-busting</h3>
+    <p>Separate fact from fiction with clear explanations and references.</p>
+  </div>
+  <div class="feature-box">
+    <h3>Confidential guidance</h3>
+    <p>Explore sensitive topics privately, at your own pace.</p>
+  </div>
+  <div class="feature-box">
+    <h3>Adult-focused content (18+)</h3>
+    <p>Designed specifically for adults with real-world questions.</p>
+  </div>
+</section>
+
+<section class="learn-topics">
+  <h2>Learn by Topic</h2>
+  <div class="topic-box" onclick="location.href='bodies.html'">
+    <h3>Bodies & Anatomy</h3>
+    <p>Understanding sexual anatomy and physiology</p>
+  </div>
+  <div class="topic-box">
+    <h3>Pleasure & Communication</h3>
+    <p>Sexual satisfaction and healthy communication</p>
+  </div>
+  <div class="topic-box">
+    <h3>Contraception & Pregnancy</h3>
+    <p>Birth control options and reproductive health</p>
+  </div>
+  <div class="topic-box">
+    <h3>STIs & Testing</h3>
+    <p>Sexual health screening and infection prevention</p>
+  </div>
+  <div class="topic-box">
+    <h3>Consent & Boundaries</h3>
+    <p>Understanding consent and healthy boundaries</p>
+  </div>
+  <div class="topic-box">
+    <h3>Relationships & Emotions</h3>
+    <p>Emotional wellness and relationship health</p>
+  </div>
+</section>
+
+<section class="myths">
+  <h2>Myths vs Facts</h2>
+  <div class="myth-box">
+    <h3>Debunking common myths about sexual dysfunction</h3>
+  </div>
+  <div class="myth-box">
+    <h3>Size is all that matters</h3>
+  </div>
+  <div class="myth-box">
+    <h3>Contraception is 100% effective</h3>
+  </div>
+  <div class="myth-box">
+    <h3>You can't get an STI if there's no visible symptoms</h3>
+  </div>
+</section>
+
+<footer>
+  <p>Important: Our responses provide educational information, not personal medical advice. Always consult with a healthcare provider for personalized guidance.</p>
+  <p>© 2026 IntimaCare | Educational Use Only</p>
+</footer>
 
 </body>
 </html>
