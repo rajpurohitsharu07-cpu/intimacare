@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bodies & Anatomy - IntimaCare</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:#0e0e12;
+  color:white;
+}
+
+header{
+  text-align:center;
+  padding:60px 20px;
+  background:linear-gradient(135deg,#1c1c2b,#2b1f3d);
+}
+
+header h1{
+  font-size:42px;
+  color:#c084fc;
+}
+
+header p{
+  opacity:0.8;
+  max-width:700px;
+  margin:auto;
+}
+
+.container{
+  padding:50px 20px;
+  max-width:900px;
+  margin:auto;
+}
+
+.accordion{
+  background:#1a1a25;
+  color:#c084fc;
+  cursor:pointer;
+  padding:18px;
+  width:100%;
+  border:none;
+  outline:none;
+  text-align:left;
+  font-size:20px;
+  border-radius:10px;
+  margin-bottom:10px;
+  transition:0.3s;
+}
+
+.accordion:hover{
+  background:#2b1f3d;
+}
+
+.active, .accordion:after{
+  font-weight:bold;
+}
+
+.panel{
+  padding:0 18px;
+  display:none;
+  background-color:#14141c;
+  overflow:hidden;
+  border-radius:0 0 10px 10px;
+  margin-bottom:15px;
+}
+
+.panel img{
+  max-width:100%;
+  border-radius:10px;
+  margin:15px 0;
+}
+
+.panel p{
+  opacity:0.85;
+  line-height:1.6;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Bodies & Anatomy</h1>
+  <p>Understand reproductive anatomy, sexual response, hormones, and common concerns with clear illustrations.</p>
+</header>
+
+<div class="container">
+
+<button class="accordion">Male Reproductive Anatomy</button>
+<div class="panel">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Male_reproductive_system.svg/400px-Male_reproductive_system.svg.png" alt="Male Anatomy">
+  <p>The male reproductive system consists of external and internal structures, including the penis, testes, epididymis, vas deferens, seminal vesicles, and prostate gland. Proper understanding is essential for sexual and reproductive health.</p>
+</div>
+
+<button class="accordion">Female Reproductive Anatomy</button>
+<div class="panel">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Female_reproductive_system.svg/400px-Female_reproductive_system.svg.png" alt="Female Anatomy">
+  <p>The female reproductive system includes the ovaries, fallopian tubes, uterus, cervix, and vagina. Hormonal balance and anatomy knowledge are key for menstrual health and sexual well-being.</p>
+</div>
+
+<button class="accordion">Sexual Response Cycle</button>
+<div class="panel">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Sexual_response_cycle.svg/400px-Sexual_response_cycle.svg.png" alt="Sexual Response">
+  <p>The sexual response cycle includes four phases: excitement, plateau, orgasm, and resolution. Awareness of these stages helps understand normal sexual function and identify potential concerns.</p>
+</div>
+
+<button class="accordion">Hormones & Libido</button>
+<div class="panel">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Hormones.svg/400px-Hormones.svg.png" alt="Hormones">
+  <p>Key hormones like testosterone, estrogen, and progesterone influence libido, sexual function, and mood. Imbalances may lead to reduced sexual desire or other issues.</p>
+</div>
+
+<button class="accordion">Common Concerns</button>
+<div class="panel">
+  <p>Common sexual health concerns include erectile difficulties, low libido, premature ejaculation, irregular periods, and pain during intercourse. Understanding anatomy and physiology helps in identifying possible causes and solutions.</p>
+</div>
+
+</div>
+
+<script>
+const acc = document.getElementsByClassName("accordion");
+for(let i=0;i<acc.length;i++){
+  acc[i].addEventListener("click",function(){
+    this.classList.toggle("active");
+    let panel=this.nextElementSibling;
+    if(panel.style.display==="block"){
+      panel.style.display="none";
+    }else{
+      panel.style.display="block";
+    }
+  });
+}
+</script>
+
+</body>
+</html>
