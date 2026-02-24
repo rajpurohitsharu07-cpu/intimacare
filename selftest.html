@@ -1,200 +1,184 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Confidential Self Assessment - IntimaCare</title>
-
+<title>Self Assessment - IntimaCare</title>
 <style>
 body{
   margin:0;
   font-family:'Segoe UI',sans-serif;
   background:#0e0e12;
   color:white;
+  line-height:1.6;
+}
+
+header{
   text-align:center;
+  padding:60px 20px;
+  background:linear-gradient(135deg,#1c1c2b,#2b1f3d);
 }
 
-.container{
-  padding:50px 20px;
-  max-width:750px;
-  margin:auto;
-}
-
-h1{
+header h1{
+  font-size:42px;
   color:#c084fc;
 }
 
-button{
-  padding:12px 20px;
-  margin:8px;
-  border:none;
-  border-radius:25px;
-  background:#c084fc;
-  font-weight:bold;
-  cursor:pointer;
+header p{
+  opacity:0.8;
+  max-width:700px;
+  margin:auto;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:50px 20px;
+}
+
+.question{
+  background:#1a1a25;
+  border-radius:10px;
+  padding:18px;
+  margin-bottom:15px;
+}
+
+.question h3{
+  margin:0 0 10px 0;
+  color:#c084fc;
 }
 
 .option{
   display:block;
-  width:100%;
-  margin:10px 0;
+  margin:8px 0;
 }
 
-.card-btn{
-  display:block;
-  width:100%;
-  max-width:400px;
-  margin:12px auto;
+button{
+  background:#c084fc;
+  color:#0e0e12;
+  border:none;
+  padding:12px 20px;
+  font-size:16px;
+  border-radius:8px;
+  cursor:pointer;
+  margin-top:20px;
+  transition:0.3s;
 }
 
-.result{
+button:hover{
+  background:#e0aaff;
+}
+
+#result{
   margin-top:30px;
+  background:#2b1f3d;
   padding:20px;
   border-radius:10px;
+  display:none;
 }
-
-.low{ background:#1e3a2f; }
-.medium{ background:#3a321e; }
-.high{ background:#3a1e1e; }
-
-a{ color:#c084fc; }
 </style>
 </head>
 
 <body>
 
+<header>
+  <h1>Self Assessment</h1>
+  <p>Answer a few questions to check your risk level and get personalized guidance.</p>
+</header>
+
 <div class="container">
 
-<h1>Confidential Self-Assessment</h1>
-<p>Educational risk indicator. Not a medical diagnosis.</p>
+<form id="selftestForm">
 
-<div id="conditionSelect">
-  <h3>Select a Concern</h3>
-  <button class="card-btn" onclick="startTest('ed')">Erectile Dysfunction Risk</button>
-  <button class="card-btn" onclick="startTest('pe')">Premature Ejaculation Risk</button>
-  <button class="card-btn" onclick="startTest('libido')">Low Libido Risk</button>
-  <button class="card-btn" onclick="startTest('anxiety')">Performance Anxiety</button>
-  <button class="card-btn" onclick="startTest('period')">Irregular Periods</button>
-  <button class="card-btn" onclick="startTest('pain')">Pain During Intercourse</button>
-</div>
+  <!-- Topic 1: Erectile Dysfunction -->
+  <div class="question">
+    <h3>1. How often do you have trouble maintaining an erection?</h3>
+    <label class="option"><input type="radio" name="ed1" value="0"> Never</label>
+    <label class="option"><input type="radio" name="ed1" value="1"> Sometimes</label>
+    <label class="option"><input type="radio" name="ed1" value="2"> Often</label>
+    <label class="option"><input type="radio" name="ed1" value="3"> Always</label>
+  </div>
 
-<div id="quiz" style="display:none;">
-  <h3 id="questionText"></h3>
-  <div id="options"></div>
-</div>
+  <div class="question">
+    <h3>2. How stressed or anxious do you feel before sexual activity?</h3>
+    <label class="option"><input type="radio" name="ed2" value="0"> Not at all</label>
+    <label class="option"><input type="radio" name="ed2" value="1"> Mildly</label>
+    <label class="option"><input type="radio" name="ed2" value="2"> Moderately</label>
+    <label class="option"><input type="radio" name="ed2" value="3"> Severely</label>
+  </div>
 
-<div id="result" style="display:none;"></div>
+  <!-- Topic 2: Low Libido -->
+  <div class="question">
+    <h3>3. How often do you feel low sexual desire?</h3>
+    <label class="option"><input type="radio" name="libido1" value="0"> Never</label>
+    <label class="option"><input type="radio" name="libido1" value="1"> Sometimes</label>
+    <label class="option"><input type="radio" name="libido1" value="2"> Often</label>
+    <label class="option"><input type="radio" name="libido1" value="3"> Always</label>
+  </div>
 
-</div>
+  <div class="question">
+    <h3>4. Do you feel fatigued or stressed frequently?</h3>
+    <label class="option"><input type="radio" name="libido2" value="0"> Rarely</label>
+    <label class="option"><input type="radio" name="libido2" value="1"> Sometimes</label>
+    <label class="option"><input type="radio" name="libido2" value="2"> Often</label>
+    <label class="option"><input type="radio" name="libido2" value="3"> Always</label>
+  </div>
+
+  <!-- Topic 3: Premature Ejaculation -->
+  <div class="question">
+    <h3>5. How often do you ejaculate sooner than you want?</h3>
+    <label class="option"><input type="radio" name="pe1" value="0"> Never</label>
+    <label class="option"><input type="radio" name="pe1" value="1"> Sometimes</label>
+    <label class="option"><input type="radio" name="pe1" value="2"> Often</label>
+    <label class="option"><input type="radio" name="pe1" value="3"> Always</label>
+  </div>
+
+  <!-- Topic 4: Hormonal / Female Health -->
+  <div class="question">
+    <h3>6. Do you experience irregular cycles or hormonal changes?</h3>
+    <label class="option"><input type="radio" name="hormone1" value="0"> Never</label>
+    <label class="option"><input type="radio" name="hormone1" value="1"> Sometimes</label>
+    <label class="option"><input type="radio" name="hormone1" value="2"> Often</label>
+    <label class="option"><input type="radio" name="hormone1" value="3"> Always</label>
+  </div>
+
+  <!-- Topic 5: Pain / Discomfort -->
+  <div class="question">
+    <h3>7. Do you feel pain or discomfort during sexual activity?</h3>
+    <label class="option"><input type="radio" name="pain1" value="0"> Never</label>
+    <label class="option"><input type="radio" name="pain1" value="1"> Sometimes</label>
+    <label class="option"><input type="radio" name="pain1" value="2"> Often</label>
+    <label class="option"><input type="radio" name="pain1" value="3"> Always</label>
+  </div>
+
+  <button type="button" onclick="calculateScore()">Check My Risk Level</button>
+</form>
+
+<div id="result"></div>
 
 <script>
+function calculateScore(){
+  const form = document.forms['selftestForm'];
+  let score = 0;
+  for(let i=0;i<form.length;i++){
+    if(form[i].checked){
+      score += parseInt(form[i].value);
+    }
+  }
 
-let condition="";
-let score=0;
-let qIndex=0;
+  let risk = '';
+  if(score<=4){
+    risk = 'Low risk – Keep a healthy lifestyle and monitor your sexual health.';
+  } else if(score<=9){
+    risk = 'Moderate risk – Consider lifestyle changes and consulting a health professional if issues persist.';
+  } else {
+    risk = 'High risk – It is recommended to consult a qualified doctor or counselor for personalized guidance.';
+  }
 
-const data={
-
-ed:[
-{q:"Difficulty maintaining erection?",o:[["Occasionally",1],["Frequently",2],["Always",3]]},
-{q:"Duration of issue?",o:[["<1 month",1],["1-6 months",2],[">6 months",3]]},
-{q:"Morning erections present?",o:[["Yes",0],["Rarely",2],["No",3]]}
-],
-
-pe:[
-{q:"Ejaculation within 1 minute?",o:[["Rarely",1],["Often",2],["Almost always",3]]},
-{q:"Control over ejaculation?",o:[["Good",0],["Moderate",1],["Poor",3]]},
-{q:"Causing distress?",o:[["Mild",1],["Moderate",2],["Severe",3]]}
-],
-
-libido:[
-{q:"Reduced sexual interest?",o:[["Mild",1],["Moderate",2],["Severe",3]]},
-{q:"Stress levels?",o:[["Low",0],["Moderate",1],["High",2]]},
-{q:"Sleep quality?",o:[["Good",0],["Disturbed",2],["Poor",3]]}
-],
-
-anxiety:[
-{q:"Fear of performance failure?",o:[["Sometimes",1],["Often",2],["Always",3]]},
-{q:"Symptoms improve when relaxed?",o:[["Yes",0],["Not sure",1],["No",2]]},
-{q:"Relationship stress?",o:[["Low",0],["Moderate",1],["High",2]]}
-],
-
-period:[
-{q:"Cycle irregularity frequency?",o:[["Occasional",1],["Frequent",2],["Very irregular",3]]},
-{q:"Severe pain or heavy bleeding?",o:[["No",0],["Moderate",2],["Severe",3]]},
-{q:"Stress or weight change?",o:[["No",0],["Yes",2]]}
-],
-
-pain:[
-{q:"Pain during penetration?",o:[["Mild",1],["Moderate",2],["Severe",3]]},
-{q:"Burning or infection symptoms?",o:[["No",0],["Occasional",2],["Frequent",3]]},
-{q:"Pain persistent >3 months?",o:[["No",0],["Yes",3]]}
-]
-
-};
-
-function startTest(type){
-condition=type;
-score=0;
-qIndex=0;
-document.getElementById("conditionSelect").style.display="none";
-document.getElementById("quiz").style.display="block";
-showQuestion();
+  const resultDiv = document.getElementById('result');
+  resultDiv.style.display = 'block';
+  resultDiv.innerHTML = `<h2>Your Risk Assessment</h2><p>${risk}</p>`;
 }
-
-function showQuestion(){
-let q=data[condition][qIndex];
-document.getElementById("questionText").innerText=q.q;
-let optDiv=document.getElementById("options");
-optDiv.innerHTML="";
-q.o.forEach(opt=>{
-let btn=document.createElement("button");
-btn.innerText=opt[0];
-btn.className="option";
-btn.onclick=function(){
-score+=opt[1];
-nextQuestion();
-};
-optDiv.appendChild(btn);
-});
-}
-
-function nextQuestion(){
-qIndex++;
-if(qIndex<data[condition].length){
-showQuestion();
-}else{
-showResult();
-}
-}
-
-function showResult(){
-document.getElementById("quiz").style.display="none";
-let resultDiv=document.getElementById("result");
-resultDiv.style.display="block";
-
-let level="";
-let advice="";
-
-if(score<=3){
-level="Low Risk";
-resultDiv.className="result low";
-advice="Likely stress or lifestyle related. Focus on sleep, exercise, and stress management.";
-}
-else if(score<=6){
-level="Moderate Risk";
-resultDiv.className="result medium";
-advice="Persistent symptoms may require professional evaluation.";
-}
-else{
-level="Higher Risk Level";
-resultDiv.className="result high";
-advice="Strongly recommended to consult a qualified healthcare professional.";
-}
-
-resultDiv.innerHTML="<h2>"+level+"</h2><p>"+advice+"</p><br><a href='selftest.html'>Restart Assessment</a>";
-}
-
 </script>
 
 </body>
