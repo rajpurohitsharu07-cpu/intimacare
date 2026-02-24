@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confidential Self Assessment - IntimaCare</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:#0e0e12;
+  color:white;
+  text-align:center;
+}
+
+.container{
+  padding:50px 20px;
+  max-width:750px;
+  margin:auto;
+}
+
+h1{
+  color:#c084fc;
+}
+
+button{
+  padding:12px 20px;
+  margin:8px;
+  border:none;
+  border-radius:25px;
+  background:#c084fc;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.option{
+  display:block;
+  width:100%;
+  margin:10px 0;
+}
+
+.card-btn{
+  display:block;
+  width:100%;
+  max-width:400px;
+  margin:12px auto;
+}
+
+.result{
+  margin-top:30px;
+  padding:20px;
+  border-radius:10px;
+}
+
+.low{ background:#1e3a2f; }
+.medium{ background:#3a321e; }
+.high{ background:#3a1e1e; }
+
+a{ color:#c084fc; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Confidential Self-Assessment</h1>
+<p>Educational risk indicator. Not a medical diagnosis.</p>
+
+<div id="conditionSelect">
+  <h3>Select a Concern</h3>
+  <button class="card-btn" onclick="startTest('ed')">Erectile Dysfunction Risk</button>
+  <button class="card-btn" onclick="startTest('pe')">Premature Ejaculation Risk</button>
+  <button class="card-btn" onclick="startTest('libido')">Low Libido Risk</button>
+  <button class="card-btn" onclick="startTest('anxiety')">Performance Anxiety</button>
+  <button class="card-btn" onclick="startTest('period')">Irregular Periods</button>
+  <button class="card-btn" onclick="startTest('pain')">Pain During Intercourse</button>
+</div>
+
+<div id="quiz" style="display:none;">
+  <h3 id="questionText"></h3>
+  <div id="options"></div>
+</div>
+
+<div id="result" style="display:none;"></div>
+
+</div>
+
+<script>
+
+let condition="";
+let score=0;
+let qIndex=0;
+
+const data={
+
+ed:[
+{q:"Difficulty maintaining erection?",o:[["Occasionally",1],["Frequently",2],["Always",3]]},
+{q:"Duration of issue?",o:[["<1 month",1],["1-6 months",2],[">6 months",3]]},
+{q:"Morning erections present?",o:[["Yes",0],["Rarely",2],["No",3]]}
+],
+
+pe:[
+{q:"Ejaculation within 1 minute?",o:[["Rarely",1],["Often",2],["Almost always",3]]},
+{q:"Control over ejaculation?",o:[["Good",0],["Moderate",1],["Poor",3]]},
+{q:"Causing distress?",o:[["Mild",1],["Moderate",2],["Severe",3]]}
+],
+
+libido:[
+{q:"Reduced sexual interest?",o:[["Mild",1],["Moderate",2],["Severe",3]]},
+{q:"Stress levels?",o:[["Low",0],["Moderate",1],["High",2]]},
+{q:"Sleep quality?",o:[["Good",0],["Disturbed",2],["Poor",3]]}
+],
+
+anxiety:[
+{q:"Fear of performance failure?",o:[["Sometimes",1],["Often",2],["Always",3]]},
+{q:"Symptoms improve when relaxed?",o:[["Yes",0],["Not sure",1],["No",2]]},
+{q:"Relationship stress?",o:[["Low",0],["Moderate",1],["High",2]]}
+],
+
+period:[
+{q:"Cycle irregularity frequency?",o:[["Occasional",1],["Frequent",2],["Very irregular",3]]},
+{q:"Severe pain or heavy bleeding?",o:[["No",0],["Moderate",2],["Severe",3]]},
+{q:"Stress or weight change?",o:[["No",0],["Yes",2]]}
+],
+
+pain:[
+{q:"Pain during penetration?",o:[["Mild",1],["Moderate",2],["Severe",3]]},
+{q:"Burning or infection symptoms?",o:[["No",0],["Occasional",2],["Frequent",3]]},
+{q:"Pain persistent >3 months?",o:[["No",0],["Yes",3]]}
+]
+
+};
+
+function startTest(type){
+condition=type;
+score=0;
+qIndex=0;
+document.getElementById("conditionSelect").style.display="none";
+document.getElementById("quiz").style.display="block";
+showQuestion();
+}
+
+function showQuestion(){
+let q=data[condition][qIndex];
+document.getElementById("questionText").innerText=q.q;
+let optDiv=document.getElementById("options");
+optDiv.innerHTML="";
+q.o.forEach(opt=>{
+let btn=document.createElement("button");
+btn.innerText=opt[0];
+btn.className="option";
+btn.onclick=function(){
+score+=opt[1];
+nextQuestion();
+};
+optDiv.appendChild(btn);
+});
+}
+
+function nextQuestion(){
+qIndex++;
+if(qIndex<data[condition].length){
+showQuestion();
+}else{
+showResult();
+}
+}
+
+function showResult(){
+document.getElementById("quiz").style.display="none";
+let resultDiv=document.getElementById("result");
+resultDiv.style.display="block";
+
+let level="";
+let advice="";
+
+if(score<=3){
+level="Low Risk";
+resultDiv.className="result low";
+advice="Likely stress or lifestyle related. Focus on sleep, exercise, and stress management.";
+}
+else if(score<=6){
+level="Moderate Risk";
+resultDiv.className="result medium";
+advice="Persistent symptoms may require professional evaluation.";
+}
+else{
+level="Higher Risk Level";
+resultDiv.className="result high";
+advice="Strongly recommended to consult a qualified healthcare professional.";
+}
+
+resultDiv.innerHTML="<h2>"+level+"</h2><p>"+advice+"</p><br><a href='selftest.html'>Restart Assessment</a>";
+}
+
+</script>
+
+</body>
+</html>
