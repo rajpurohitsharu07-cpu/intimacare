@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IntimaCare</title>
     <style>
-        /* Global Styles */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -21,20 +20,15 @@
         }
         header {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             padding: 1rem 2rem;
             background-color: #111;
-        }
-        header img {
-            height: 50px;
         }
         nav a {
             margin-left: 2rem;
             font-weight: bold;
         }
-
-        /* Hero Section */
         .hero {
             text-align: center;
             padding: 4rem 1rem;
@@ -64,8 +58,6 @@
         .cta:hover {
             background-color: #9a6de0;
         }
-
-        /* Services Section */
         .container {
             max-width: 900px;
             margin: 3rem auto;
@@ -76,58 +68,6 @@
             font-size: 2rem;
             margin-bottom: 2rem;
         }
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-        .service-card {
-            background-color: #2a2a2a;
-            padding: 1.5rem;
-            border-radius: 10px;
-            width: 260px;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(180, 141, 247, 0.4);
-        }
-        .service-card h4 {
-            margin: 1rem 0;
-        }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 100;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.8);
-        }
-        .modal-content {
-            background-color: #222;
-            margin: 10% auto;
-            padding: 2rem;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 500px;
-            color: #e0d9f0;
-        }
-        .close {
-            color: #b48df7;
-            float: right;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Footer */
         footer {
             text-align: center;
             padding: 2rem;
@@ -141,7 +81,6 @@
 
     <!-- Header -->
     <header>
-        <img src="/mnt/data/a_logo_for_intimacare_is_centered_in_the_digital_g.png" alt="IntimaCare Logo">
         <nav>
             <a href="anatomy.html">Bodies & Anatomy</a>
             <a href="myth.html">Myth vs Fact</a>
@@ -156,74 +95,11 @@
         <button class="cta" onclick="location.href='selftest.html'">Start Self Assessment</button>
     </section>
 
-    <!-- Services -->
-    <div class="container">
-        <h3>Our Services</h3>
-        <div class="services">
-            <div class="service-card" onclick="openModal('modal1')">
-                <h4>Personalized Counseling</h4>
-                <p>One-on-one guidance tailored to your sexual health concerns.</p>
-            </div>
-            <div class="service-card" onclick="openModal('modal2')">
-                <h4>Reality-Based Treatment</h4>
-                <p>Evidence-based advice and treatment recommendations.</p>
-            </div>
-            <div class="service-card" onclick="openModal('modal3')">
-                <h4>Myth Busting & Education</h4>
-                <p>Learn the facts and bust common myths about sexual health.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modals -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal1')">&times;</span>
-            <h4>Personalized Counseling</h4>
-            <p>Our expert counselors provide private, customized advice based on your needs and concerns. Your questions remain anonymous, and you receive guidance suited to your individual health profile.</p>
-        </div>
-    </div>
-    <div id="modal2" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal2')">&times;</span>
-            <h4>Reality-Based Treatment</h4>
-            <p>Get reliable treatment recommendations backed by medical research. We focus on solutions that are practical, safe, and evidence-based.</p>
-        </div>
-    </div>
-    <div id="modal3" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal3')">&times;</span>
-            <h4>Myth Busting & Education</h4>
-            <p>Sexual health is full of myths and misconceptions. We provide clear, accurate information to empower you with knowledge and confidence.</p>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer>
         <p>Contact: <a href="mailto:rajpurohitsharu07@gmail.com">rajpurohitsharu07@gmail.com</a></p>
-        <p>Follow us:
-            <a href="#">Instagram</a> |
-            <a href="#">Facebook</a> |
-            <a href="#">Twitter</a>
-        </p>
         <p>© 2026 IntimaCare | Educational Use Only</p>
     </footer>
 
-    <script>
-        function openModal(id) {
-            document.getElementById(id).style.display = 'block';
-        }
-        function closeModal(id) {
-            document.getElementById(id).style.display = 'none';
-        }
-        window.onclick = function(event) {
-            const modals = document.querySelectorAll('.modal');
-            modals.forEach(modal => {
-                if(event.target == modal) {
-                    modal.style.display = 'none';
-                }
-            });
-        }
-    </script>
 </body>
 </html>
