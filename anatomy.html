@@ -11,6 +11,7 @@ body{
   font-family:'Segoe UI',sans-serif;
   background:#0e0e12;
   color:white;
+  line-height:1.6;
 }
 
 header{
@@ -45,7 +46,7 @@ header p{
   border:none;
   outline:none;
   text-align:left;
-  font-size:20px;
+  font-size:22px;
   border-radius:10px;
   margin-bottom:10px;
   transition:0.3s;
@@ -55,7 +56,7 @@ header p{
   background:#2b1f3d;
 }
 
-.active, .accordion:after{
+.active{
   font-weight:bold;
 }
 
@@ -76,7 +77,33 @@ header p{
 
 .panel p{
   opacity:0.85;
-  line-height:1.6;
+}
+
+.sub-accordion{
+  background:#252533;
+  color:#c084fc;
+  cursor:pointer;
+  padding:14px;
+  width:100%;
+  border:none;
+  outline:none;
+  text-align:left;
+  font-size:18px;
+  border-radius:8px;
+  margin:8px 0;
+}
+
+.sub-panel{
+  display:none;
+  background:#1a1a25;
+  padding:10px 15px;
+  border-radius:8px;
+  margin-bottom:10px;
+}
+
+.sub-panel p{
+  opacity:0.85;
+  margin:5px 0;
 }
 </style>
 </head>
@@ -85,38 +112,102 @@ header p{
 
 <header>
   <h1>Bodies & Anatomy</h1>
-  <p>Understand reproductive anatomy, sexual response, hormones, and common concerns with clear illustrations.</p>
+  <p>Understand reproductive anatomy, sexual response, hormones, and common concerns with clear illustrations and examples.</p>
 </header>
 
 <div class="container">
 
+<!-- Male Reproductive Anatomy -->
 <button class="accordion">Male Reproductive Anatomy</button>
 <div class="panel">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Male_reproductive_system.svg/400px-Male_reproductive_system.svg.png" alt="Male Anatomy">
-  <p>The male reproductive system consists of external and internal structures, including the penis, testes, epididymis, vas deferens, seminal vesicles, and prostate gland. Proper understanding is essential for sexual and reproductive health.</p>
+
+  <button class="sub-accordion">External Organs</button>
+  <div class="sub-panel">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Male_reproductive_system.svg/400px-Male_reproductive_system.svg.png" alt="Male External Anatomy">
+    <p>Includes the penis and scrotum. The penis is responsible for sexual intercourse and urine passage. The scrotum houses the testes, maintaining optimal temperature for sperm production.</p>
+  </div>
+
+  <button class="sub-accordion">Internal Organs</button>
+  <div class="sub-panel">
+    <p>The testes produce sperm and testosterone. The epididymis stores sperm temporarily. The vas deferens transports sperm to the urethra. Seminal vesicles and prostate gland add fluids to semen for nourishment and motility.</p>
+  </div>
+
+  <button class="sub-accordion">Common Conditions</button>
+  <div class="sub-panel">
+    <p>Erectile dysfunction, low sperm count, and hormonal imbalances are some common issues. Healthy lifestyle and regular check-ups help maintain reproductive health.</p>
+  </div>
 </div>
 
+<!-- Female Reproductive Anatomy -->
 <button class="accordion">Female Reproductive Anatomy</button>
 <div class="panel">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Female_reproductive_system.svg/400px-Female_reproductive_system.svg.png" alt="Female Anatomy">
-  <p>The female reproductive system includes the ovaries, fallopian tubes, uterus, cervix, and vagina. Hormonal balance and anatomy knowledge are key for menstrual health and sexual well-being.</p>
+
+  <button class="sub-accordion">External Organs</button>
+  <div class="sub-panel">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Female_reproductive_system.svg/400px-Female_reproductive_system.svg.png" alt="Female External Anatomy">
+    <p>Vulva, labia, clitoris, and vaginal opening form the external reproductive organs. The clitoris is highly sensitive and plays a major role in sexual arousal.</p>
+  </div>
+
+  <button class="sub-accordion">Internal Organs</button>
+  <div class="sub-panel">
+    <p>The ovaries produce eggs and hormones (estrogen, progesterone). Fallopian tubes transport eggs to the uterus. The uterus supports pregnancy. The cervix connects uterus and vagina, and regulates menstrual flow.</p>
+  </div>
+
+  <button class="sub-accordion">Hormonal Influence</button>
+  <div class="sub-panel">
+    <p>Hormonal fluctuations influence menstrual cycle, sexual desire, mood, and fertility. Irregularities can affect libido and reproductive health.</p>
+  </div>
 </div>
 
+<!-- Sexual Response Cycle -->
 <button class="accordion">Sexual Response Cycle</button>
 <div class="panel">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Sexual_response_cycle.svg/400px-Sexual_response_cycle.svg.png" alt="Sexual Response">
-  <p>The sexual response cycle includes four phases: excitement, plateau, orgasm, and resolution. Awareness of these stages helps understand normal sexual function and identify potential concerns.</p>
+
+  <button class="sub-accordion">Phases</button>
+  <div class="sub-panel">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Sexual_response_cycle.svg/400px-Sexual_response_cycle.svg.png" alt="Sexual Response Cycle">
+    <p>Four phases: Excitement, Plateau, Orgasm, and Resolution. Understanding differences in male and female responses helps normalize expectations and reduces anxiety.</p>
+  </div>
+
+  <button class="sub-accordion">Tips for Healthy Response</button>
+  <div class="sub-panel">
+    <p>Focus on relaxation, communication with partner, regular exercise, and stress management. Adequate sleep and balanced nutrition support hormonal balance.</p>
+  </div>
 </div>
 
+<!-- Hormones & Libido -->
 <button class="accordion">Hormones & Libido</button>
 <div class="panel">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Hormones.svg/400px-Hormones.svg.png" alt="Hormones">
-  <p>Key hormones like testosterone, estrogen, and progesterone influence libido, sexual function, and mood. Imbalances may lead to reduced sexual desire or other issues.</p>
+
+  <button class="sub-accordion">Key Hormones</button>
+  <div class="sub-panel">
+    <p>Testosterone, estrogen, progesterone, oxytocin, and prolactin influence sexual desire, arousal, and mood. Imbalances may reduce libido or alter sexual response.</p>
+  </div>
+
+  <button class="sub-accordion">Lifestyle Impact</button>
+  <div class="sub-panel">
+    <p>Exercise, diet, stress reduction, and adequate sleep support hormonal health. Avoid smoking and excessive alcohol for better sexual function.</p>
+  </div>
 </div>
 
-<button class="accordion">Common Concerns</button>
+<!-- Common Concerns -->
+<button class="accordion">Common Sexual Health Concerns</button>
 <div class="panel">
-  <p>Common sexual health concerns include erectile difficulties, low libido, premature ejaculation, irregular periods, and pain during intercourse. Understanding anatomy and physiology helps in identifying possible causes and solutions.</p>
+
+  <button class="sub-accordion">Erectile Dysfunction & Low Libido</button>
+  <div class="sub-panel">
+    <p>May result from stress, hormonal imbalance, or lifestyle factors. Early recognition and medical consultation improve outcomes.</p>
+  </div>
+
+  <button class="sub-accordion">Premature Ejaculation & Performance Anxiety</button>
+  <div class="sub-panel">
+    <p>Often psychological in origin. Relaxation techniques, communication, and lifestyle improvements can help.</p>
+  </div>
+
+  <button class="sub-accordion">Irregular Periods & Pain</button>
+  <div class="sub-panel">
+    <p>Could indicate hormonal or gynecological issues. Track cycles and seek evaluation if persistent.</p>
+  </div>
 </div>
 
 </div>
@@ -125,6 +216,19 @@ header p{
 const acc = document.getElementsByClassName("accordion");
 for(let i=0;i<acc.length;i++){
   acc[i].addEventListener("click",function(){
+    this.classList.toggle("active");
+    let panel=this.nextElementSibling;
+    if(panel.style.display==="block"){
+      panel.style.display="none";
+    }else{
+      panel.style.display="block";
+    }
+  });
+}
+
+const subAcc = document.getElementsByClassName("sub-accordion");
+for(let i=0;i<subAcc.length;i++){
+  subAcc[i].addEventListener("click",function(){
     this.classList.toggle("active");
     let panel=this.nextElementSibling;
     if(panel.style.display==="block"){
